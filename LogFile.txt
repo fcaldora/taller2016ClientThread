@@ -1,4 +1,3 @@
 Falta escribir el nombre del archivo del cliente, se usara uno por defecto.
 El usuario eligio la opcion 1.
-Se recibio satisfactoriamente el mensaje con ID:0 tipo:server_full valor:Try again later
-Error: no se pudo conectar porque el servidor esta lleno
+Hubo un error mientras el usuario se conectaba: Puede que el servidor este apagado. Intenta mas tarde

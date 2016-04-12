@@ -245,7 +245,7 @@ int main(int argc, char* argv[]) {
 						}
 					}
 
-					//desencolarMensajesThread = std::thread(desencolarMensajesAenviar, destinationSocket);
+					desencolarMensajesThread = std::thread(desencolarMensajesAenviar, destinationSocket);
 
 				} else
 					cout << "Ya estas conectado!!" << endl;
@@ -262,7 +262,7 @@ int main(int argc, char* argv[]) {
 			case MenuOptionChoosedTypeExit:
 				appShouldExit = true;
 				close(destinationSocket);
-				//desencolarMensajesThread.detach();
+				desencolarMensajesThread.detach();
 				break;
 			case MenuOptionChoosedTypeCycle:
 				if (userIsConnected) {
@@ -281,8 +281,8 @@ int main(int argc, char* argv[]) {
 				}else if (userIsConnected){
 					clientMsj mensaje;
 					parser->getMessage(mensaje, userDidChooseOption - 5);
-					//messagesToSend.push_back(mensaje);
-					sendMsj(destinationSocket, sizeof(mensaje),&mensaje);
+					messagesToSend.push_back(mensaje);
+					//sendMsj(destinationSocket, sizeof(mensaje),&mensaje);
 					readMsj(destinationSocket, sizeof(recibido), &recibido);
 				} else
 					cout << "Primero tenes que conectarte" << endl;
